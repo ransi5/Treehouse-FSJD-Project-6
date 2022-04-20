@@ -1,0 +1,21 @@
+div#modal.hide
+  div.modal-wrapper
+    form(method='post', action='/')
+      h2  Hi Stranger
+      p   Please provide the following details for a customized experience
+      label(for='username') Your name please!
+      br
+      input(type='text', id='name', name='username')
+      p Are you an Employer?
+      input(type='radio', name='employer', value='true')
+      label(for='employer')       Yes
+      input(type='radio', name='employer', value='false')
+      label(for='employer')     No
+      p Would you like this program to remember you on your next visit?
+      input(type='radio', name='remember', value='true')
+      label(for='remember')        Yes
+      input(type='radio', name='remember', value='')
+      label(for='remember')          No
+      br
+      button(type='submit') Submit
+      button#close Skip

@@ -1,0 +1,39 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    //- Replace with your own heading like 'My Portfolio', or 'Hey, Potential Employers', or 'Let's make the web great together!'
+    if username
+      h1 Hello #{username}
+      h1 This is Randeep's Awesome Portfolio
+    else
+      h1 The Awesome Portfolio
+    //- Replace with a description for your portfolio, what this project is, it's purpose, what it's supposed to accomplish, etc.
+    p
+      | This portfolio comprises projects which Randeep completed as part of his TechDegree course at Treehouse.
+      | It demonstrates his problem solving skills, attention to detail and  commitment to perfection to name a few. The Projects, most of all
+      | serves as evidence of his dedication to building himself into an awesome developer. The projects provide evidence that Randeep goes above
+      | and beyond the minimum requirements to achieve the best grades.
+
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      //- Use the Pug `each` iterator to loop over the projects in your data file
+
+        //- Use the example Pug code below and interpolated template literals as needed to dynamically generate:
+          //- The paths in the link's href and img's src attributes
+          //- The text 'Thumbnail' interpolated with the project title for the img's alt attribute
+          //- The project title for the h5 element's text
+      each project in projects
+        - var url = `${project.id}`;
+        - var src = `${project.image_urls.thumb}`;
+        - var alt = `${project.project_name}`;
+        .cell
+          a(href='/project/' + url)
+            img.thumbnail(src=src, alt=alt + ' thumbnail')
+            h5 #{project.project_name}
+
+  include includes/modal.pug
