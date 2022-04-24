@@ -6,8 +6,14 @@ const { data } = require('../data.json');
 const { projects } = data;
 
 // set up router path and response
-router.get('/:id', (req, res) => {
-  res.render('project', { project: projects[req.params.id] })
+router.get('/:id', (req, res, next) => {
+  if (parseInt(req.params.id) <= 5) {
+    res.render('project', { project: projects[req.params.id] })
+  } else {
+    const err = new Error('Page not found');
+    err.status = 404;
+    next(err);
+  }
 })
-// export the router 
+// export the router
 module.exports = router;

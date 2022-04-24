@@ -11,7 +11,7 @@ if true it sends cookie data along with projects to render the index.pug
 else it only sends the project data to render index.pug
 */
 router.get('/', (req, res) => {
-  if (req.cookies) {
+  if (req.cookies.user) {
     res.render('index', {
       projects,
       username: req.cookies.user
@@ -52,5 +52,5 @@ router.post('/', (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about')
 })
-//set up module to export router 
+//set up module to export router
 module.exports = router;

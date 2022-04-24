@@ -67,3 +67,6 @@ block content
       a(href='/')
         span &larr;
         |  Back
+  script
+    | var sidebar = document.querySelector('#my-info');
+    | window.onload = () => sidebar.style.height = document.getElementsByTagName('body')[0].scrollHeight + 'px';
