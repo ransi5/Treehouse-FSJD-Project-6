@@ -1,0 +1,42 @@
+extends layout.pug
+
+block content
+
+  nav.nav
+    a(href='/')
+      span &larr;
+      |  Back
+
+  article.portfolio-projects
+    .inner-wrapper.flex-row-wrap.two-col
+      .project-info-box.box
+
+        h1 #{project.project_name}
+
+        p #{project.description}
+
+      .project-tech-links-box.box
+        h6 Technologies
+        ul
+
+          - var technologies = `${project.technologies}`;
+          each tech, index in project.technologies
+            li= tech
+
+        - var liv = `${project.live_link}`;
+        - var git = `${project.github_link}`;
+        a.btn-link(href=liv, target='_blank') Live Demo
+        a.btn-link(href=git, target='_blank') GitHub Repo
+
+    .project-img-box.box
+
+      - var image = `${project.image_urls.landscape}`;
+      img.project-img(src=image, alt='')
+
+    nav.nav
+      a(href='/')
+        span &larr;
+        |  Back
+    script
+      | var sidebar = document.querySelector('#my-info');
+      | window.onload = () => sidebar.style.height = document.getElementsByTagName('body')[0].scrollHeight + 'px';
