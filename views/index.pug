@@ -30,37 +30,3 @@ block content
             h5 #{project.project_name}
 
   include includes/modal.pug
-=======
-extends layout.pug
-
-block content
-
-  article.portfolio-intro
-
-    if username
-      h1 Hello #{username}
-      h1 This is Randeep's Awesome Portfolio
-    else
-      h1 The Awesome Portfolio
-
-    p
-      | This portfolio comprises projects which Randeep completed as part of his TechDegree course at Treehouse.
-      | It demonstrates his problem solving skills, attention to detail and  commitment to perfection to name a few. The Projects, most of all
-      | serves as evidence of his dedication to building himself into an awesome developer. The projects provide evidence that Randeep goes above
-      | and beyond the minimum requirements to achieve the best grades.
-
-
-  article.portfolio-project-thumbs
-    .projects-box.box.grid
-
-      each project in projects
-        - var url = `${project.id}`;
-        - var src = `${project.image_urls.thumb}`;
-        - var alt = `${project.project_name}`;
-        .cell
-          a(href='/project/' + url)
-            img.thumbnail(src=src, alt=alt + ' thumbnail')
-            h5 #{project.project_name}
-
-  include includes/modal.pug
->>>>>>> 0f9b419ebbba4365c18636c61ce7e5fbfb8174bf
