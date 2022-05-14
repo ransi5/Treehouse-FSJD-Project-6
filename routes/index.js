@@ -5,7 +5,7 @@ const router = express.Router();
 const { data } = require('../data.json');
 const { projects } = data;
 /*
-Set up pathe to handle GET requests and response for the index path
+Set up path to handle GET requests and response for the index path
 The conditional statement checks if a cookie is set up
 if true it sends cookie data along with projects to render the index.pug
 else it only sends the project data to render index.pug

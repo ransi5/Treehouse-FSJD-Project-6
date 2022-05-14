@@ -335,7 +335,7 @@ nav a span {
 
 input[type="text"] {
   line-height: 1.75;
-  border: 1.px solid rgba(1, 83, 124, 1);
+  border: 1px solid rgba(1, 83, 124, 1);
   letter-spacing: 1.5px;
   border-radius: 5px;
 }

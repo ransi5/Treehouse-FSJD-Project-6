@@ -24,10 +24,12 @@ document.querySelector('#menu-icon').addEventListener('click', e => {
    modal.classList.replace('hide', 'open')
    modal.style.height = document.getElementsByTagName('body')[0].scrollHeight + 'px';
    skip.addEventListener('click', () => {
+// session cookie installed so the user doesnt get the modal prompt every time user navigates to index page
+     document.cookie = "temp=0";
      modal.classList.replace('open', 'hide');
      document.querySelector('.wrapper').removeChild(modal);
    })
- } 
+ }
 
  /**
   * Sidebar height
